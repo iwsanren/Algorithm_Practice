@@ -30,8 +30,8 @@ class KMPIndexOfFirstOccTest {
     public static void main(String[] args) {
         KMPIndexOfFirstOcc kmp = new KMPIndexOfFirstOcc();
         System.out.println(kmp.strStr("aabaabaaf","aabaaf"));
-        System.out.println(kmp.strStr("aabaabaaf",""));
-        System.out.println(kmp.strStr("sadbutsad","sad"));
-        System.out.println(kmp.strStr("leetcode","leeto"));
+//        System.out.println(kmp.strStr("aabaabaaf",""));
+//        System.out.println(kmp.strStr("sadbutsad","sad"));
+//        System.out.println(kmp.strStr("leetcode","leeto"));
     }
 }

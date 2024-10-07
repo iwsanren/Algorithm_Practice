@@ -29,4 +29,39 @@ public class spiralMatrix {
         if(n%2 != 0) res[n/2][n/2] = count;
         return res;
     }
+
+    public int[][] generateMatrix2(int n) {
+        int count = 1;
+        int[][] res = new int[n][n];
+        for (int i = 0; i < n/2; i++) {
+            for (int j = i; j < n - i - 1; j++) {
+                res[i][j] = count++;
+            }
+            for (int j = i; j < n - i - 1; j++) {
+                res[j][n - i - 1] = count++;
+            }
+            for (int j = n - i - 1; j > i; j--) {
+                res[n - i - 1][j] = count++;
+            }
+            for (int j = n - i - 1; j > i; j--) {
+                res[j][i] = count++;
+            }
+        }
+        if(n % 2 != 0){
+            res[n/2][n/2] = count;
+        }
+        return res;
+    }
+}
+class spiralMatrixTest {
+    public static void main(String[] args) {
+        spiralMatrix example = new spiralMatrix();
+        int[][] res = example.generateMatrix2(5);
+        for (int i = 0; i < res.length; i++) {
+            for (int j = 0; j < res[i].length; j++) {
+                System.out.print(res[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
 }

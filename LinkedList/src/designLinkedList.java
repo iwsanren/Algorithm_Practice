@@ -129,10 +129,101 @@ class MyLinkedList2 {
         node.next = cur.next;
         cur.next = node;
         size++;
-
     }
     public void deleteAtIndex(int index) {		}
 }
+
+//24.10.5 review
+
+class MyLinkedListReview {
+    int size;
+    ListNode head;
+    //initialize
+    public MyLinkedListReview() {
+        this.size = 0;
+        this.head = new ListNode(0);
+    }
+
+    public int get(int index) {
+        if(index >= size){
+            return -1;
+        }else{
+            ListNode cur = head;
+            for (int i = 0; i <= index; i++) {
+                cur = cur.next;
+            }
+            return cur.val;
+        }
+    }
+
+    public void addAtHead(int val) {
+        ListNode toAdd = new ListNode(val);
+        toAdd.next = head.next;
+        head.next = toAdd;
+        size++;
+    }
+
+    public void addAtTail(int val) {
+        ListNode cur = head;
+        while(cur.next != null){
+            cur = cur.next;
+        }
+        cur.next = new ListNode(val);
+        size++;
+    }
+
+    public void addAtIndex(int index, int val) {
+        if(index > size){
+            return;
+        }
+        ListNode cur = head;
+        for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
+        ListNode toAdd = new ListNode(val);
+        toAdd.next = cur.next;
+        cur.next = toAdd;
+        size++;
+    }
+
+    public void deleteAtIndex(int index) {
+        if (index >= size) {
+            return;
+        }
+        ListNode cur = head;
+        for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
+        cur.next = cur.next.next;
+        size--;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

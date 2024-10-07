@@ -61,7 +61,7 @@ class iterativeTraversalTest {
         iterativeTraversal it = new iterativeTraversal();
         TreeBuilder tb = new TreeBuilder();
         TreeNode root = tb.buildTree();
-        List<Integer> list = it.preorderTraversal(root);
+        List<Integer> list = it.postorderTraversal(root);
         for(int i:list){
             System.out.print(i+" ");
         }

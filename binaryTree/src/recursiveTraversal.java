@@ -43,9 +43,13 @@ class recursiveTraversalTest{
         recursiveTraversal rt = new recursiveTraversal();
         TreeBuilder tb = new TreeBuilder();
         TreeNode root = tb.buildTree();
-        List<Integer> list = rt.inorderTraversal(root);
-        for(int i:list){
-            System.out.print(i+" ");
-        }
+        List<Integer> list1 = rt.preorderTraversal(root);
+        List<Integer> list2 = rt.inorderTraversal(root);
+        List<Integer> list3 = rt.postorderTraversal(root);
+        for(int i:list1){            System.out.print(i+",");        }
+        System.out.println();
+        for(int i:list2){            System.out.print(i+",");        }
+        System.out.println();
+        for(int i:list3){            System.out.print(i+",");        }
     }
 }
