@@ -36,4 +36,34 @@ class Solution {
         this.head = dummy.next;
     }
 
+    public ListNode swapPairs2(ListNode head) {
+        ListNode dummyhead = new ListNode(-1);
+        dummyhead.next = head;
+        ListNode cur = dummyhead;
+        while(cur.next != null && cur.next.next != null){
+            ListNode temp1 = cur.next;
+            ListNode temp2 = cur.next.next.next;
+
+            cur.next = cur.next.next;
+            cur.next.next = temp1;
+            temp1.next = temp2;
+
+            cur = temp1;
+        }
+        return dummyhead.next;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

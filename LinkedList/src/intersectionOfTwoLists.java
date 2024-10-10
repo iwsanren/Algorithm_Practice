@@ -62,4 +62,52 @@ class intersection{
         return null;
     }
 
+    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+        int lenA = 0;
+        int lenB = 0;
+        ListNode curA = headA;
+        ListNode curB = headB;
+        while(curA != null){
+            lenA++;
+            curA = curA.next;
+        }
+        while(curB != null){
+            lenB++;
+            curB = curB.next;
+        }
+
+        if(lenA < lenB){
+            curA = headB;
+            curB = headA;
+            int temp = lenB;
+            lenB = lenA;
+            lenA = temp;
+        }else{
+            curA = headA;
+            curB = headB;
+        }
+        for (int i = 0; i < (lenA - lenB); i++) {
+            curA = curA.next;
+        }
+        while(curA != null){
+            if(curA == curB){
+                return curA;
+            }
+            curA = curA.next;
+            curB = curB.next;
+        }
+        return null;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
