@@ -42,6 +42,22 @@ public class intersectionTwoArrays {
 ////        return resList.stream().mapToInt(x -> x).toArray();
 //
 //    }
+
+    public int[] intersection01(int[] nums1, int[] nums2) {
+        Set<Integer> hash = new HashSet<>();
+        Set<Integer> result = new HashSet<>();
+
+        for(int i : nums1){
+            hash.add(i);
+        }
+
+        for(int i : nums2){
+            if(hash.contains(i)){
+                result.add(i);
+            }
+        }
+        return result.stream().mapToInt(x -> x).toArray();
+    }
 }
 
 class intersectionTwoArraysTest{
