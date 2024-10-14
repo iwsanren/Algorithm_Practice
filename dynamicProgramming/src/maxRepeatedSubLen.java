@@ -34,7 +34,7 @@ public class maxRepeatedSubLen {
                 if(dp[i][j] > result){
                     result = dp[i][j];
                 }
-                //System.out.println("dp["+i+"]["+j+"] = "+dp[i][j]);
+                System.out.println("dp["+i+"]["+j+"] = "+dp[i][j]);
             }
         }
         return result;
@@ -46,7 +46,7 @@ class maxRepeatedSubLenTest{
     public static void main(String[] args) {
         maxRepeatedSubLen example = new maxRepeatedSubLen();
         int[] nums1 = {70,39,25,40,7};
-        int[] nums2 = {52,20,67,5,31};
+        int[] nums2 = {25,39,40,40,7};
         System.out.println(example.findLength(nums1,nums2));
     }
 
